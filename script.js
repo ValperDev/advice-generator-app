@@ -3,9 +3,13 @@ const adviceNumber = document.querySelector(".advice__number");
 const adviceQuote = document.querySelector(".advice__quote");
 
 async function fetchAdvice() {
-    const response = await fetch("https://api.adviceslip.com/advice");
-    const responseJson = await response.json();
-    return responseJson;
+    try {
+        const response = await fetch("https://api.adviceslip.com/advice");
+        const responseJson = await response.json();
+        return responseJson;
+    } catch(e) {
+        console.error(e);
+    }
 }
 
 async function replaceContent() {
