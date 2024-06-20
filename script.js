@@ -15,7 +15,7 @@ async function fetchAdvice() {
 async function replaceContent() {
     const response = await fetchAdvice();
     adviceNumber.innerText = response.slip.id;
-    adviceQuote.innerText = response.slip.advice;
+    adviceQuote.innerText = `"${response.slip.advice}"`;
 }
 
 replaceContent();
